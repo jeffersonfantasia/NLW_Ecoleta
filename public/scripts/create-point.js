@@ -62,9 +62,12 @@ let selectedItems = []
 
 function handleSelectedItem(event) {
     const itemLi = event.target
+    
+    //add ou remover a classe com js
     itemLi.classList.toggle("selected")
     const itemId = itemLi.dataset.id
 
+    
     const alreadySeleccted = selectedItems.findIndex( item => {
         const itemFound = item == itemId
         return itemFound
@@ -81,6 +84,8 @@ function handleSelectedItem(event) {
         selectedItems.push(itemId)
     }
 
+        
+    //atualizar o campo escondido com os itens selecionados
     collectedItems.value = selectedItems
 
 }
